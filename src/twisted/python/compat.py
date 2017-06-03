@@ -841,7 +841,10 @@ if _PY3:
 else:
     _tokenize = tokenize.generate_tokens
 
-
+if _PY3:
+    buffer = None
+else:
+    buffer = buffer
 
 __all__ = [
     "reraise",
@@ -882,5 +885,6 @@ __all__ = [
     "intern",
     "unichr",
     "raw_input",
-    "_tokenize"
+    "_tokenize",
+    "buffer"
 ]
